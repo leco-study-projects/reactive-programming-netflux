@@ -1,28 +1,36 @@
 package guru.leco.netflux.domain;
 
-import lombok.Data;
 import lombok.NonNull;
-import lombok.ToString;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-@Data
 public class Movie {
-
-    public Movie() {
-    }
 
     public Movie(String id, @NonNull String title) {
         this.id = id;
         this.title = title;
     }
 
-    @Id
     private String id;
 
     @NonNull
     private String title;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     @Override
     public String toString() {

@@ -14,7 +14,7 @@ import java.util.Date;
 @Service
 public class MovieServiceImpl implements MovieService {
 
-    private MovieRepository movieRepository;
+    private final MovieRepository movieRepository;
 
     @Autowired
     public MovieServiceImpl(MovieRepository movieRepository) {

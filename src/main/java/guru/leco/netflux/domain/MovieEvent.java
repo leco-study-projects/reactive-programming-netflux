@@ -1,17 +1,31 @@
 package guru.leco.netflux.domain;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.Date;
 
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class MovieEvent {
+
+    public MovieEvent(String movieId, Date date) {
+        this.movieId = movieId;
+        this.date = date;
+    }
+
+    public String getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(String movieId) {
+        this.movieId = movieId;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     private String movieId;
     private Date date;
