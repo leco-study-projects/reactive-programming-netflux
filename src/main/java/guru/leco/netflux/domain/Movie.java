@@ -1,17 +1,22 @@
 package guru.leco.netflux.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Movie {
+
+    public Movie() {
+    }
+
+    public Movie(String id, @NonNull String title) {
+        this.id = id;
+        this.title = title;
+    }
 
     @Id
     private String id;
@@ -19,4 +24,11 @@ public class Movie {
     @NonNull
     private String title;
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }
